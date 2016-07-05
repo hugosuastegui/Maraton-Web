@@ -1,0 +1,30 @@
+  <h1>Bienvenido a Maratón Web!</h1>
+  <% if @bulean %>
+  <p style="color:green">Usuario registrado</p>
+  <% @bulean = false %>
+  <%end %>
+   <% if @bulean2 %>
+  <p style="color:red">Logout Efectuado</p>
+  <% @bulean2 = false %>
+  <%end %>
+  <%= @error_message %>
+
+  <h3>Haz login para jugar!</h3>
+  <form action="/login" method="post">
+    <p>Usuario:</p>
+    <input type="text" name="email"><br>
+    <p>Contraseña</p>
+    <input type="password" name="password"><br><br>
+    <input type="submit" value="Log in"><br>
+  </form><br>
+  <p style="text-align:center"><%= '*'*90 %></p>
+
+  <h3>Regístrate</h3>
+  <form action="/register" method="post">
+    <p>Crear un usuario:</p>
+    <input type="text" name="email"><br>
+    <p>Contraseña</p>
+    <input type="password" name="password"><br><br>
+    <input type="submit" value="Crear cuenta"><br>
+  </form>
+  

@@ -1,0 +1,9 @@
+<h1>GAME ON!</h1>
+<% @array.each_with_index do |card, index| %>
+<b><%= card.question %></b><br>
+<form action="/answer" method="get">
+<input type="text" name="ans_<%=index%>"><br>
+<%end%>
+<input type="hidden" name="user_input" value="<%=@user_input%>">
+<input type="submit" value="Check your answer"><br>
+</form>

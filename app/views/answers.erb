@@ -1,0 +1,17 @@
+<h1>Las respuestas de Juego!</h1>
+<% @array.each_with_index do |card, index| %>
+<b><%= card.question %></b><br>
+<p><%= checked(card,@answers[index])%></p><br>
+<%end%>
+
+<form action="/users/<%=session[:id]%>" method="get">
+  <input type="submit" value="Play again!">
+</form><br>
+
+<form action="/stats/<%=session[:id]%>" method="get">
+  <input type="submit" value="See your stats">
+</form>
+
+<form action="/logout" method="get">
+  <input type="submit" value="Log out">
+</form>
